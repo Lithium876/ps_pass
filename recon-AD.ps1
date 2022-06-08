@@ -7783,7 +7783,7 @@ If ($Credential -ne [Management.Automation.PSCredential]::Empty)
 $ADSInitType = $ADS_NAME_INITTYPE_DOMAIN
 Try
 {
-[System.__ComObject].InvokeMember(“InitEx”,”InvokeMethod”,$null,$Translate,$(@($ADSInitType,$DomainFQDN,($Credential.GetNetworkCredential()).UserName,$DomainFQDN,($Credential.GetNetworkCredential()).Password)))
+[System.__ComObject].InvokeMember("InitEx","InvokeMethod",$null,$Translate,$(@($ADSInitType,$DomainFQDN,($Credential.GetNetworkCredential()).UserName,$DomainFQDN,($Credential.GetNetworkCredential()).Password)))
 }
 Catch
 {
@@ -7795,7 +7795,7 @@ Else
 $ADSInitType = $ADS_NAME_INITTYPE_GC
 Try
 {
-[System.__ComObject].InvokeMember(“Init”,”InvokeMethod”,$null,$Translate,($ADSInitType,$null))
+[System.__ComObject].InvokeMember("Init","InvokeMethod",$null,$Translate,($ADSInitType,$null))
 }
 Catch
 {
@@ -7804,11 +7804,11 @@ $Init = $false
 }
 If ($Init)
 {
-[System.__ComObject].InvokeMember(“ChaseReferral”,”SetProperty”,$null,$Translate,$ADS_CHASE_REFERRALS_ALWAYS)
+[System.__ComObject].InvokeMember("ChaseReferral","SetProperty",$null,$Translate,$ADS_CHASE_REFERRALS_ALWAYS)
 Try
 {
-[System.__ComObject].InvokeMember(“Set”,”InvokeMethod”,$null,$Translate,($ADS_NAME_TYPE_UNKNOWN, $TargetSID))
-$ADSOutput = [System.__ComObject].InvokeMember(“Get”,”InvokeMethod”,$null,$Translate,$ADSOutputType)
+[System.__ComObject].InvokeMember("Set","InvokeMethod",$null,$Translate,($ADS_NAME_TYPE_UNKNOWN, $TargetSID))
+$ADSOutput = [System.__ComObject].InvokeMember("Get","InvokeMethod",$null,$Translate,$ADSOutputType)
 }
 Catch
 {
@@ -9559,4 +9559,3 @@ If ($Log)
 {
 Stop-Transcript
 }
-

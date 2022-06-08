@@ -924,7 +924,7 @@ function Add-ServiceDacl {
             [OutputType([IntPtr])]
             Param(
                 [Parameter(Mandatory = $True, ValueFromPipeline = $Param(
-                [Parameter(Mandatory = $True, ValueFromPipeline = $True)])
+                [Parameter(Mandatory = $True, ValueFromPipeline = $True)])])
                 [ValidateNotNullOrEmpty()]
                 [ValidateScript({ $_ -as 'ServiceProcess.ServiceController' })]
                 $Service
@@ -1040,7 +1040,7 @@ function Set-ServiceBinaryPath {
             [OutputType([IntPtr])]
             Param(
                 [Parameter(Mandatory = $True, ValueFromPipeline = $Param(
-                [Parameter(Mandatory = $True, ValueFromPipeline = $True)])
+                [Parameter(Mandatory = $True, ValueFromPipeline = $True)])])
                 [ServiceProcess.ServiceController]
                 [ValidateNotNullOrEmpty()]
                 $TargetService

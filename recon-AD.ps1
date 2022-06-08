@@ -4694,7 +4694,7 @@ Function Export-ADRExcel
 
             $workbook.Worksheets.Item(1).Hyperlinks.Add($workbook.Worksheets.Item(1).Cells.Item(1,4) , "https:document_library?category=pcidss&document=pci_dss", "" , "", "PCI DSS v3.2.1") | Out-Null
             $workbook.Worksheets.Item(1).Hyperlinks.Add($workbook.Worksheets.Item(1).Cells.Item(1,6) , "https:Out-Null
-            $workbook.Worksheets.Item(1).Hyperlinks.Add($workbook.Worksheets.Item(1).Cells.Item(1,7) , "https:, "", "CIS Benchmark 2016") | Out-Null
+            $workbook.Worksheets.Item(1).Hyperlinks.Add($workbook.Worksheets.Item(1).Cells.Item(1,7) , "https://www.cisecurity.org/benchmark/microsoft_windows_server/", "" , "", "CIS Benchmark 2016") | Out-Null
 
             $excel.ScreenUpdating = $true
             Get-ADRExcelComObjRelease -ComObjtoRelease $worksheet
@@ -5144,7 +5144,7 @@ Function Export-ADRExcel
 
         $row++
         $worksheet.Cells.Item($row, 1) = "© Sense of Security 2018"
-        $workbook.Worksheets.Item(1).Hyperlinks.Add($workbook.Worksheets.Item(1).Cells.Item($row,2) , "https:"www.senseofsecurity.com.au") | Out-Null
+        $workbook.Worksheets.Item(1).Hyperlinks.Add($workbook.Worksheets.Item(1).Cells.Item($row,2) , "https://www.senseofsecurity.com.au", "" , "", "www.senseofsecurity.com.au") | Out-Null
 
         $worksheet.UsedRange.EntireColumn.AutoFit() | Out-Null
 

@@ -923,8 +923,8 @@ function Add-ServiceDacl {
         filter Local:Get-ServiceReadControlHandle {
             [OutputType([IntPtr])]
             Param(
-                [Parameter(Mandatory = $True, ValueFromPipeline = $Param(
-                [Parameter(Mandatory = $True, ValueFromPipeline = $True)])])
+                [Parameter(Mandatory = $True, ValueFromPipeline = $Param())]
+                [Parameter(Mandatory = $True, ValueFromPipeline = $True)]
                 [ValidateNotNullOrEmpty()]
                 [ValidateScript({ $_ -as 'ServiceProcess.ServiceController' })]
                 $Service

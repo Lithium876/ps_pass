@@ -5386,7 +5386,7 @@ Function Get-ADRDomain
             Try
             {
                 $SearchPath = "CN=RID Manager$,CN=System"
-                $objSearchPath = New-Object System.DirectoryServices.DirectoryEntry "LDAP:$Credential.UserName,$Credential.GetNetworkCredential().Password
+                $objSearchPath = New-Object System.DirectoryServices.DirectoryEntry "LDAP://$($DomainController)/$SearchPath,$($objDomain.distinguishedName)", $Credential.UserName,$Credential.GetNetworkCredential().Password
                 $objSearcherPath = New-Object System.DirectoryServices.DirectorySearcher $objSearchPath
                 $objSearcherPath.PropertiesToLoad.AddRange(("ridavailablepool"))
                 $objSearcherResult = $objSearcherPath.FindAll()
